@@ -1,0 +1,28 @@
+# ------------------------------
+# 適当にuserを作る
+# ------------------------------
+
+---
+- hosts: all
+  sudo: true
+  user: ansible
+
+  vars: 
+    - username: sato
+    - homedir: /home/{{username}}
+    - user_id: 2001
+
+  tasks:
+    - name: add group
+      group:
+       name: unix
+       gid: 2000
+
+    - nane: add user
+      user: 
+       name: {{ username }}
+       home: {{ homedir }}
+       group: unix
+       uid: {{　user_id　}}
+       password: "{{ '1qazxsw2'|password_hash('sha512') }}"
+
