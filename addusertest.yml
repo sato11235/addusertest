@@ -8,7 +8,7 @@
   user: ansible
 
   vars: 
-    - username: sato
+    - username: "sato"
     - homedir: /home/{{username}}
     - user_id: 2001
 
@@ -24,5 +24,5 @@
        home: {{ homedir }}
        group: unix
        uid: {{　user_id　}}
-       password: "{{ '1qazxsw2'|password_hash('sha512') }}"
+       password: "{{ 'test'|password_hash('sha512') }}"
 
