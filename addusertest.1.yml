@@ -7,6 +7,10 @@
   sudo: true
   user: ansible
 
+  vars: 
+    - username: "sato"
+    - homedir: /home/{{username}}
+    - user_id: 2001
 
   tasks:
     - name: add group
@@ -16,9 +20,10 @@
 
     - nane: add user
       user: 
-       name: sato
-       home: /home/sato
+       name: "{{ username }}"
+       home: "{{ homedir }}"
        group: unix
-       uid: 2001
+       uid: "{{　user_id　}}"
+       shell: /bin/bash
        password: "{{ 'test'|password_hash('sha512') }}"
 
