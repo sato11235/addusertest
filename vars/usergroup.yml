@@ -1,0 +1,14 @@
+# ===========================
+# 各種変数を記載
+# ===========================
+
+---
+  usergroup:
+    unix: 
+      username: sato
+      groupname: unix
+      uid: 2001
+      gid: 2000
+      home: /home/sato
+      shell: /bin/bash
+      password: "{{ 'test'|password_hash('sha512') }}"

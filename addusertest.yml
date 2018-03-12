@@ -14,7 +14,7 @@
        name: unix
        gid: 2000
 
-    - nane: add user
+    - name: add user
       user: 
        name: sato
        home: /home/sato
