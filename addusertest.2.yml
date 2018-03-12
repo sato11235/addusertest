@@ -7,7 +7,7 @@
   sudo: true
   user: ansible
   vars_files:
-    - ../vars/usergroup.yml
+    - ./vars/usergroup.yml
 #  vars: 
 #    - username: "sato"
 #    - homedir: /home/{{username}}

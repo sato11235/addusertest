@@ -1,0 +1,31 @@
+# ===========================
+# 各種変数を記載
+# ===========================
+
+---
+  
+  groups: 
+    - groupname: unixA
+      gid: 2000
+
+    - groupname: unixB
+      gid: 3000
+
+
+  users: 
+    - username: suzuki
+      groupname: unixA
+      uid: 2002
+      gid: 2000
+      home: /home/suzuki
+      shell: /bin/bash
+      password: "{{ 'test'|password_hash('sha512') }}"
+
+    - username: sato
+      groupname: unixA
+      uid: 2001
+      gid: 2000
+      home: /home/sato
+      shell: /bin/bash
+      password: "{{ 'test'|password_hash('sha512') }}"
+      
